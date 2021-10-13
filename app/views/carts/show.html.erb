@@ -6,7 +6,7 @@
 
   <% if enhanced_cart.empty? %>
     <p class='alert alert-danger'>Your shopping cart is empty. Please add a product to the cart.</p>
-    <%=link_to 'Home', {controller: 'products'}, class: 'alert alert-info', style: 'padding: 0.5em' %>
+    <%= link_to "Home", root_path, class: 'btn btn-primary', style: 'padding: 0.5em' %>
   <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
