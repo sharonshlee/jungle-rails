@@ -28,6 +28,13 @@
         <li>
           <%= link_to 'About Us', [:about, :index] %>
         </li>
+          <% if current_user %>
+              <li class="navbar-text" style="padding-left:1em"> Signed in as <%= current_user.name %></li>
+             <li> <%= link_to 'Logout', session_path(current_user), method: :delete %></li>
+          <% else %>
+            <li> <%= link_to 'Login', [:new, :session] %></li>
+            <li> <%= link_to 'Signup', [:new, :user] %></li>
+          <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">

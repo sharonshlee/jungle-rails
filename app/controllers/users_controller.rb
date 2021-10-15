@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       # '/signup'
-      redirect_to [:users, :new]
+      redirect_to [:new, :user]
     end
   end
 
