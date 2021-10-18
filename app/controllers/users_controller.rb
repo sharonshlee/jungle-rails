@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  # login
-  def index
-  end
-
   # signup
   def new
   end
