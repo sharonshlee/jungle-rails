@@ -5,9 +5,9 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
 
-  validates :name, presence: true
-  validates :price, presence: true
-  validates :quantity, presence: true
-  validates :category, presence: true
+  validates :name, presence:  { message: "Name cannot be blank" }
+  validates :price, presence: { message: "Price cannot be blank" }
+  validates :quantity, presence: { message: "Quantity cannot be blank" }
+  validates :category, presence: { message: "Category cannot be blank" }
 
 end
