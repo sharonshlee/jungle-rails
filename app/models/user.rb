@@ -9,14 +9,14 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :name, presence: true
 
-  # def self.authenticate_with_credentials(email, password)
-  #   # return user if authentication success
-  #   @user = User.find_by_email(email.strip.downcase)
-  #   if @user && password
-  #     @user
-  #   else
-  #     nil
-  #   end
-  # end
+  def self.authenticate_with_credentials(email, password)
+    # return user if authentication success
+    @user = User.find_by_email(email.strip.downcase)
+    if @user && @user.authenticate(password)
+      @user
+    else
+      nil
+    end
+  end
   
 end

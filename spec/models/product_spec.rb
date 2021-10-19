@@ -42,7 +42,6 @@ RSpec.describe Product do
 
       it 'should be validated when its empty' do
         @product = Product.new
-        @product.price = []
         @product.valid?
         expect(@product.errors[:price]).to include("Price cannot be blank")
       end
